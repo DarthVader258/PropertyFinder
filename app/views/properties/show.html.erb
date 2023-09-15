@@ -1,10 +1,19 @@
-<p style="color: green"><%= notice %></p>
+<div style="color: green"><%= notice %></div>
 
+<%= image_tag @property.image, class: 'prop-image' %>
 <%= render @property %>
 
 <div>
-  <%= link_to "Edit this property", edit_property_path(@property) %> |
+  <%= link_to "Edit this property", edit_property_path(@property), class: "btn btn-success" %> |
   <%= link_to "Back to properties", properties_path %>
 
   <%= button_to "Destroy this property", @property, method: :delete %>
+  <%#= link_to "Cancel", properties_path, class: "btn btn-secondary" %>
 </div>
+<style>
+  .prop-image{
+    width: 100%;
+    overflow: hidden;
+    height: 40%;
+  }
+</style>
